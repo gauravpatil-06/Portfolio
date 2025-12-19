@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Gaurav Patil | Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/education.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/certificates.css">
+    <link rel="stylesheet" href="css/achievements.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        primary: '#2563eb'
+                    },
+                    screens: {
+                        'xs': '475px',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        #mobile-menu.closed {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 dark:bg-[#0f172a] dark:text-slate-100 flex flex-col pt-24">
+
+    <nav data-aos="fade-down"
+        class="bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-lg border-b dark:border-slate-800 fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="w-full px-6 lg:px-20 h-24 flex justify-between items-center max-w-[1920px] mx-auto">
+            <a href="#home" class="shrink-0 z-50 relative">
+                <img src="images/portfolio_logo_white.png" alt="Logo" class="logo-img logo-light-mode h-10 w-auto">
+                <img src="images/portfolio_logo_black.png" alt="Logo" class="logo-img logo-dark-mode h-10 w-auto">
+            </a>
+
+            <div class="flex items-center gap-6">
+                <div class="hidden xl:flex gap-5 text-slate-600 dark:text-slate-300 font-medium">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About Me</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#certificates" class="nav-link">Certificates</a>
+                    <a href="#achievements" class="nav-link">Achievements</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+
+                <button id="theme-toggle"
+                    class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 shadow-sm z-50 relative">
+                    <i class="fa-solid fa-moon text-lg text-slate-600 dark:text-slate-300"></i>
+                </button>
+
+                <button id="mobile-menu-btn"
+                    class="xl:hidden w-10 h-10 flex items-center justify-center text-slate-600 dark:text-slate-300 z-50 relative">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-white dark:bg-[#0f172a] z-40 flex flex-col items-center justify-center gap-6 text-lg font-medium text-slate-700 dark:text-slate-200 closed xl:hidden h-screen w-screen">
+            <a href="#home" class="mobile-nav-link hover:text-blue-600">Home</a>
+            <a href="#about" class="mobile-nav-link hover:text-blue-600">About Me</a>
+            <a href="#education" class="mobile-nav-link hover:text-blue-600">Education</a>
+            <a href="#experience" class="mobile-nav-link hover:text-blue-600">Experience</a>
+            <a href="#skills" class="mobile-nav-link hover:text-blue-600">Skills</a>
+            <a href="#services" class="mobile-nav-link hover:text-blue-600">Services</a>
+            <a href="#portfolio" class="mobile-nav-link hover:text-blue-600">Portfolio</a>
+            <a href="#certificates" class="mobile-nav-link hover:text-blue-600">Certificates</a>
+            <a href="#achievements" class="mobile-nav-link hover:text-blue-600">Achievements</a>
+            <a href="#blog" class="mobile-nav-link hover:text-blue-600">Blog</a>
+
+            <a href="#contact" class="mobile-nav-link hover:text-blue-600">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home"
+        class="w-full flex items-center justify-center px-4 md:px-6 lg:px-16 overflow-hidden py-12 lg:py-20">
+        <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+            <div class="text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center">
+                <h1 data-aos="fade-right" data-aos-delay="100"
+                    class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold mb-4 leading-tight tracking-tight">
+                    Hi, I'm <span class="text-blue-600 inline-block">Gaurav Patil</span>
+                </h1>
+                <div class="h-8 md:h-10 mb-6 flex justify-center lg:justify-start" data-aos="fade-right"
+                    data-aos-delay="200">
+                    <span id="typed"
+                        class="text-lg sm:text-xl lg:text-2xl text-slate-500 dark:text-slate-400 font-bold tracking-wide"></span>
+                </div>
+                <div class="mb-8 max-w-xl mx-auto lg:mx-0" data-aos="fade-right" data-aos-delay="300">
+                    <p
+                        class="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                        I continuously explore new technologies and enjoy solving real-world challenges.
+                        I focus on building <span
+                            class="text-slate-900 dark:text-white font-bold underline decoration-blue-500 decoration-2 underline-offset-4">clean,
+                            efficient, and user-focused</span> digital solutions.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-10" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <a href="#about" class="btn btn-primary shadow-xl shadow-blue-500/20 text-sm md:text-base">About
+                        Me</a>
+                    <a href="#contact" class="btn btn-outline text-sm md:text-base">Contact Me</a>
+                </div>
+
+                <div class="flex flex-nowrap gap-3 justify-start items-center overflow-x-auto no-scrollbar pb-2 max-w-full touch-pan-x"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <a class="social shrink-0" title="LinkedIn" target="_blank"
+                        href="https://www.linkedin.com/in/gaurav-pati06/"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a class="social shrink-0" title="GitHub" target="_blank"
+                        href="https://github.com/gauravpatil-06"><i class="fa-brands fa-github"></i></a>
+                    <a class="social shrink-0" title="LeetCode" target="_blank"
+                        href="https://leetcode.com/u/gauravpatil-06/"><i class="fa-solid fa-code text-sm"></i></a>
+                    <a class="social shrink-0" title="HackerRank" target="_blank"
+                        href="https://www.hackerrank.com/profile/gaurav_patil_06"><i
+                            class="fa-brands fa-hackerrank"></i></a>
+                    <a class="social shrink-0" title="CodeChef" target="_blank"
+                        href="https://www.codechef.com/users/gaurav_patil06"><i class="fa-solid fa-bowl-food"></i></a>
+                    <a class="social shrink-0" title="Codeforces" target="_blank"
+                        href="https://codeforces.com/profile/gaurav_patil_06"><i
+                            class="fa-solid fa-chart-simple"></i></a>
+                    <a class="social shrink-0" title="GeeksforGeeks" target="_blank"
+                        href="https://www.geeksforgeeks.org/user/patilgaurav"><i
+                            class="fa-solid fa-code-compare"></i></a>
+                    <a class="social shrink-0" title="Stack Overflow" target="_blank"
+                        href="https://stackoverflow.com/users/31494707/gaurav-patil"><i
+                            class="fa-brands fa-stack-overflow"></i></a>
+                    <a class="social shrink-0" title="Kaggle" target="_blank"
+                        href="https://www.kaggle.com/gauravpatil06"><i class="fa-brands fa-kaggle"></i></a>
+                    <a class="social shrink-0" title="Twitter" target="_blank"
+                        href="https://twitter.com/gauravpatil-06"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a class="social shrink-0" title="Instagram" target="_blank"
+                        href="https://www.instagram.com/gaurav_patil__06"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="social shrink-0" title="Facebook" target="_blank"
+                        href="https://www.facebook.com/share/1KUnMZHgzE/"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a class="social shrink-0" title="WhatsApp" target="_blank"
+                        href="https://wa.me/qr/LP3LC33QDLJHM1"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0" data-aos="zoom-in"
+                data-aos-duration="1200">
+                <div class="profile-ring">
+                    <img src="images/my_image.jpg" class="profile-img" alt="Gaurav Patil"
+                        onerror="this.src='https://via.placeholder.com/500'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-slate-50 dark:bg-slate-900/30 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> about me
+            </div>
+            <h2 class="section-title">About Me</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="about-content"></div>
+        <div class="section-divider"></div>
+    </section>
+
+    <section id="education" class="py-24 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> my journey
+            </div>
+            <h2 class="section-title">Education</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="education-content"></div>
+        <div class="section-divider"></div>
+    </section>
+
+    <section id="experience" class="py-24 bg-slate-50 dark:bg-slate-900/30 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> Internships
+            </div>
+            <h2 class="section-title">Experience</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="experience-content"></div>
+        <div class="section-divider"></div>
+    </section>
+
+    <section id="skills" class="py-24 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> my skills
+            </div>
+            <h2 class="section-title">My Skills</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="skills-content"></div>
+        <div class="section-divider"></div>
+    </section>
+
+    <section id="services" class="py-24 bg-slate-50 dark:bg-slate-900/30 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> our services
+            </div>
+            <h2 class="section-title">Services</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="services-content"></div>
+        <div class="section-divider"></div>
+    </section>
+
+    <section id="portfolio" class="py-24 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> portfolio
+            </div>
+            <h2 class="section-title">Projects</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="portfolio-content"></div>
+        <div class="section-divider"></div>
+    </section>
+
+    <section id="certificates" class="py-24 bg-slate-50 dark:bg-slate-900/30 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> certifications
+            </div>
+            <h2 class="section-title">Certifications</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="certificates-content"></div>
+        <div class="section-divider"></div>
+    </section>
+
+    <section id="achievements" class="py-24 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> achievements
+            </div>
+            <h2 class="section-title">Achievements</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="achievements-content"></div>
+        <div class="section-divider"></div>
+    </section>
+
+    <section id="blog" class="py-24 bg-slate-50 dark:bg-slate-900/30 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> Blog
+            </div>
+            <h2 class="section-title">Blog</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="blog-content"></div>
+        <div class="section-divider"></div>
+    </section>
+
+    <section id="contact" class="py-24 px-6">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">
+                <div class="dot"></div> contact
+            </div>
+            <h2 class="section-title">contact Me</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div id="contact-content"></div>
+    </section>
+
+    <footer
+        class="bg-[#0B1120] dark:bg-white text-slate-300 dark:text-slate-600 py-16 px-6 lg:px-24 border-t border-slate-800 dark:border-slate-200 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center justify-center text-center mb-16" data-aos="fade-up">
+
+                <div class="mb-6">
+                    <img src="images/portfolio_logo_black.png" alt="Logo" class="h-12 w-auto logo-img logo-light-mode">
+                    <img src="images/portfolio_logo_white.png" alt="Logo" class="h-12 w-auto logo-img logo-dark-mode">
+                </div>
+
+                <p class="footer-desc max-w-3xl text-slate-400 dark:text-slate-500 leading-relaxed mb-8">
+                    I enjoy learning new technologies, solving real-world problems, and turning ideas into scalable,
+                    efficient solutions. Always open to connecting, collaborating, and building impactful projects
+                    together.
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/gaurav-pati06/" target="_blank"
+                        class="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-100 text-slate-300 dark:text-slate-600 flex items-center justify-center hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/gauravpatil-06" target="_blank"
+                        class="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-100 text-slate-300 dark:text-slate-600 flex items-center justify-center hover:bg-gray-700 hover:text-white dark:hover:bg-gray-700 dark:hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/gauravpatil-06" target="_blank"
+                        class="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-100 text-slate-300 dark:text-slate-600 flex items-center justify-center hover:bg-sky-500 hover:text-white dark:hover:bg-sky-500 dark:hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/gaurav_patil__06" target="_blank"
+                        class="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-100 text-slate-300 dark:text-slate-600 flex items-center justify-center hover:bg-pink-600 hover:text-white dark:hover:bg-pink-600 dark:hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-slate-800 dark:border-slate-200 mb-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-white dark:text-slate-800 font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Home</a></li>
+                        <li><a href="#about" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>About Me</a></li>
+                        <li><a href="#education" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Education</a></li>
+                        <li><a href="#experience" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Experience</a></li>
+                        <li><a href="#skills" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Skills</a></li>
+                        <li><a href="#services" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Services</a></li>
+                        <li><a href="#portfolio" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Portfolio</a></li>
+                        <li><a href="#certificates" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Certificates</a></li>
+                        <li><a href="#achievements" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Achievements</a></li>
+                        <li><a href="#blog" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Blog</a></li>
+                        <li><a href="#contact" class="footer-link hover:text-blue-500"><i
+                                    class="fa-solid fa-angle-right text-blue-500 text-xs mr-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-white dark:text-slate-800 font-bold text-lg mb-6">Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="hover:text-blue-400 transition-colors cursor-pointer flex items-center"><i
+                                class="fa-solid fa-code text-blue-500 w-5"></i> Web Application Development</li>
+                        <li class="hover:text-blue-400 transition-colors cursor-pointer flex items-center"><i
+                                class="fa-solid fa-laptop-code text-blue-500 w-5"></i> Website Design & Development</li>
+                        <li class="hover:text-blue-400 transition-colors cursor-pointer flex items-center"><i
+                                class="fa-brands fa-android text-blue-500 w-5"></i> Android App Development</li>
+                        <li class="hover:text-blue-400 transition-colors cursor-pointer flex items-center"><i
+                                class="fa-solid fa-gears text-blue-500 w-5"></i> Customised Software Development</li>
+                        <li class="hover:text-blue-400 transition-colors cursor-pointer flex items-center"><i
+                                class="fa-solid fa-pen-nib text-blue-500 w-5"></i> UI/UX Design</li>
+                        <li class="hover:text-blue-400 transition-colors cursor-pointer flex items-center"><i
+                                class="fa-solid fa-cart-shopping text-blue-500 w-5"></i> E-Commerce Website Development
+                        </li>
+                        <li class="hover:text-blue-400 transition-colors cursor-pointer flex items-center"><i
+                                class="fa-solid fa-robot text-blue-500 w-5"></i> AI & Machine Learning Projects</li>
+                        <li class="hover:text-blue-400 transition-colors cursor-pointer flex items-center"><i
+                                class="fa-solid fa-network-wired text-blue-500 w-5"></i> IoT Project Development</li>
+                    </ul>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-white dark:text-slate-800 font-bold text-lg mb-6">Contact Us</h4>
+                    <div class="flex items-start gap-3 mb-4">
+                        <i class="fa-solid fa-user text-blue-500 mt-1"></i>
+                        <span class="text-sm">Mr. Gaurav Patil</span>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <i class="fa-solid fa-phone text-blue-500 mt-1"></i>
+                        <span class="text-sm">+91 7875335539</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope text-blue-500 mt-1"></i>
+                        <a href="mailto:gp949958@gmail.com"
+                            class="text-sm hover:text-blue-500 transition-colors">gp949958@gmail.com</a>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="text-white dark:text-slate-800 font-bold text-lg mb-6">My Location</h4>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot text-red-500 mt-1"></i>
+                        <a href="https://www.google.com/maps/place/Dr.Babasaheb+Ambedkar+250+Boy's+Government+Hostel,+Moshi/@18.647796,73.8434327,17z/data=!4m6!3m5!1s0x3bc2c7f38b8de9c3:0x8eab05922a48a319!8m2!3d18.647796!4d73.8479388!16s%2Fg%2F11c54bzn3r?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank"
+                            class="text-sm leading-relaxed text-slate-400 dark:text-slate-500 hover:text-blue-500 transition-colors">
+                            Dr. Babasaheb Ambedkar, Gunvant Vidhyarthi Backward Government Hostel, Kendriya Vihar Road,
+                            Sector Number 4, Moshi, Pimpri-Chinchwad, Maharashtra 411070
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 dark:border-slate-200 pt-8 flex justify-center items-center">
+                <p class="copyright-text text-slate-400 dark:text-slate-500 text-sm font-bold text-center w-full">
+                    © 2026 Gaurav Patil. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="certModal" class="cert-modal">
+        <div class="cert-modal-content">
+            <span class="cert-close-btn" onclick="closeCertModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+
+            <div class="gradient-border-box">
+                <div class="cert-image-viewport" id="imageWrapper">
+                    <img id="modalImage" src="" alt="Certificate">
+                </div>
+            </div>
+
+            <div class="modal-caption">
+                <h3 id="modalTitle">Certificate Name</h3>
+                <p><i class="fa-solid fa-expand"></i> Pinch / Scroll to Zoom & Drag</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // 1. AOS Initialize (Animations)
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+
+        // 2. Typed.js (Hero Section Text)
+        if (document.getElementById('typed')) {
+            new Typed('#typed', {
+                strings: ['I am a Full Stack Java Developer', 'I am a Web Developer', 'I am an Android Developer'],
+                typeSpeed: 60, backSpeed: 40, loop: true, backDelay: 2000, cursorChar: '|'
+            });
+        }
+
+        // 3. Dark/Light Theme Toggle
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        if (toggle) {
+            toggle.onclick = () => {
+                html.classList.toggle('dark');
+                const isDark = html.classList.contains('dark');
+                toggle.innerHTML = isDark ?
+                    '<i class="fa-solid fa-sun text-yellow-400 text-lg"></i>' :
+                    '<i class="fa-solid fa-moon text-lg text-slate-600"></i>';
+            };
+        }
+
+        // 4. Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuBtn ? mobileMenuBtn.querySelector('i') : null;
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.onclick = () => {
+                mobileMenu.classList.toggle('closed');
+                mobileMenu.classList.toggle('open');
+                if (menuIcon) {
+                    menuIcon.classList.toggle('fa-bars');
+                    menuIcon.classList.toggle('fa-xmark');
+                }
+            };
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.onclick = () => {
+                    mobileMenu.classList.add('closed');
+                    mobileMenu.classList.remove('open');
+                    if (menuIcon) {
+                        menuIcon.classList.add('fa-bars');
+                        menuIcon.classList.remove('fa-xmark');
+                    }
+                };
+            });
+        }
+
+        // 5. Blog Slider Function (CORRECTED)
+        function initBlogSlider() {
+            const track = document.getElementById('blogTrack');
+            const prev = document.getElementById('prevBlog');
+            const next = document.getElementById('nextBlog');
+            let currentIndex = 0;
+
+            if (!track || !prev || !next) return;
+
+            function updateSlider() {
+                // IMPORTANT FIX: Class name updated to 'custom-blog-card'
+                const cards = track.querySelectorAll('.custom-blog-card');
+                if (cards.length === 0) return;
+
+                const cardWidth = cards[0].offsetWidth;
+                // CSS gap matches here (24px desktop, 12px mobile)
+                const gap = window.innerWidth <= 640 ? 12 : 24;
+                const scrollAmount = (cardWidth + gap) * currentIndex;
+
+                track.style.transform = `translateX(-${scrollAmount}px)`;
+            }
+
+            next.onclick = () => {
+                // IMPORTANT FIX: Class name updated here too
+                const totalCards = track.querySelectorAll('.custom-blog-card').length;
+
+                // Show 4 cards on big screen, 1 on mobile
+                const visibleCards = window.innerWidth > 1024 ? 4 : (window.innerWidth > 640 ? 2 : 1);
+
+                if (currentIndex < totalCards - visibleCards) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            };
+
+            prev.onclick = () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            };
+
+            window.addEventListener('resize', () => {
+                currentIndex = 0;
+                updateSlider();
+            });
+        }
+        // 6. Project Slider Function
+        function initProjectSlider() {
+            const track = document.getElementById('projectTrack');
+            const prev = document.getElementById('prevProject');
+            const next = document.getElementById('nextProject');
+            let currentIndex = 0;
+
+            if (!track || !prev || !next) return;
+
+            function updateSlider() {
+                const cards = track.querySelectorAll('.project-card-v7');
+                if (cards.length === 0) return;
+                const cardWidth = cards[0].offsetWidth;
+                const gap = window.innerWidth <= 640 ? 12 : 24;
+                const scrollAmount = (cardWidth + gap) * currentIndex;
+                track.style.transform = `translateX(-${scrollAmount}px)`;
+            }
+
+            next.onclick = () => {
+                const totalCards = track.querySelectorAll('.project-card-v7').length;
+                const visibleCards = window.innerWidth > 1024 ? 4 : (window.innerWidth > 640 ? 2 : 1);
+                if (currentIndex < totalCards - visibleCards) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            };
+
+            prev.onclick = () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            };
+
+            window.addEventListener('resize', () => { currentIndex = 0; updateSlider(); });
+        }
+
+        // 12. NEW: Education Slider Function (Mobile Only Logic)
+        function initEducationSlider() {
+            const slider = document.getElementById('educationSlider');
+            const dotsContainer = document.getElementById('eduSliderDots');
+
+            if (!slider || !dotsContainer) return;
+
+            // Only run logic if slider is active (mostly mobile)
+            const cards = slider.querySelectorAll('.edu-card-premium');
+            if (cards.length === 0) return;
+
+            let autoPlayInterval;
+
+            // A. Dots Clean & Create
+            dotsContainer.innerHTML = '';
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('slider-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    scrollToCard(index);
+                    resetAutoPlay();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('#eduSliderDots .slider-dot');
+
+            // B. Scroll Logic
+            function scrollToCard(index) {
+                const cardWidth = cards[0].offsetWidth;
+                const gap = 20; // Match CSS gap
+                slider.scrollTo({
+                    left: (cardWidth + gap) * index,
+                    behavior: 'smooth'
+                });
+                updateDots(index);
+            }
+
+            function updateDots(index) {
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[index]) dots[index].classList.add('active');
+            }
+
+            // C. Sync Dots on Swipe/Scroll
+            slider.addEventListener('scroll', () => {
+                const cardWidth = cards[0].offsetWidth + 20;
+                const index = Math.round(slider.scrollLeft / cardWidth);
+                updateDots(index);
+            });
+
+            // D. Automatic Slider Logic (3 Seconds for Education)
+            function startAutoPlay() {
+                if (window.innerWidth >= 768) return; // Don't autoplay on desktop
+
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(() => {
+                    const cardWidth = cards[0].offsetWidth + 20;
+                    const maxScroll = slider.scrollWidth - slider.clientWidth;
+                    let nextScroll = slider.scrollLeft + cardWidth;
+                    if (Math.ceil(slider.scrollLeft) >= maxScroll - 10) {
+                        nextScroll = 0;
+                    }
+                    slider.scrollTo({ left: nextScroll, behavior: 'smooth' });
+                }, 3000);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            function resetAutoPlay() {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+
+            // E. Mobile Check
+            if (window.innerWidth < 768) {
+                startAutoPlay();
+                slider.addEventListener('touchstart', stopAutoPlay);
+                slider.addEventListener('touchend', startAutoPlay);
+            }
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < 768) startAutoPlay();
+                else stopAutoPlay();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initExperienceSlider();
+        });
+
+        function initExperienceSlider() {
+            const slider = document.getElementById('experienceSlider');
+            const dotsContainer = document.getElementById('expSliderDots');
+
+            if (!slider || !dotsContainer) return;
+
+            const cards = slider.querySelectorAll('.exp-card-premium');
+            if (cards.length === 0) return;
+
+            let autoPlayInterval;
+
+            // A. Dots Clean & Create
+            dotsContainer.innerHTML = '';
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('slider-dot');
+                if (index === 0) dot.classList.add('active');
+
+                // Click dot to scroll
+                dot.addEventListener('click', () => {
+                    scrollToCard(index);
+                    resetAutoPlay();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('.slider-dot');
+
+            // B. Scroll Logic
+            function scrollToCard(index) {
+                // Calculate width + gap (Gap is 16px on mobile/tablet per CSS)
+                const cardWidth = cards[0].offsetWidth;
+                const gap = 16;
+
+                slider.scrollTo({
+                    left: (cardWidth + gap) * index,
+                    behavior: 'smooth'
+                });
+                updateDots(index);
+            }
+
+            function updateDots(index) {
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[index]) dots[index].classList.add('active');
+            }
+
+            // C. Sync Dots on Swipe/Scroll
+            slider.addEventListener('scroll', () => {
+                // Approximate width + gap for calculation
+                const cardWidth = cards[0].offsetWidth + 16;
+                const index = Math.round(slider.scrollLeft / cardWidth);
+                updateDots(index);
+            });
+
+            // D. Automatic Slider Logic (Mobile Only)
+            function startAutoPlay() {
+                if (window.innerWidth >= 1024) return; // Don't autoplay on desktop
+
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+
+                autoPlayInterval = setInterval(() => {
+                    const cardWidth = cards[0].offsetWidth + 16;
+                    const maxScroll = slider.scrollWidth - slider.clientWidth;
+                    let nextScroll = slider.scrollLeft + cardWidth;
+
+                    // Loop back to start if at end
+                    if (Math.ceil(slider.scrollLeft) >= maxScroll - 10) {
+                        nextScroll = 0;
+                    }
+
+                    slider.scrollTo({ left: nextScroll, behavior: 'smooth' });
+                }, 3000); // 3 Seconds
+            }
+
+            function stopAutoPlay() { clearInterval(autoPlayInterval); }
+
+            function resetAutoPlay() {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+
+            // E. Initialize Autoplay on Mobile
+            if (window.innerWidth < 1024) {
+                startAutoPlay();
+
+                // Pause on touch
+                slider.addEventListener('touchstart', stopAutoPlay);
+                slider.addEventListener('touchend', startAutoPlay);
+            }
+
+            // Resize Handler
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < 1024) startAutoPlay();
+                else stopAutoPlay();
+            });
+        }
+
+        /* =========================================
+     ADVANCED CERTIFICATE LOGIC (GESTURE + FIT)
+     ========================================= */
+
+        let scale = 1;
+        let panning = false;
+        let pointX = 0;
+        let pointY = 0;
+        let startX = 0;
+        let startY = 0;
+
+        const modal = document.getElementById('certModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const imageWrapper = document.getElementById('imageWrapper');
+
+        // 1. OPEN MODAL
+        function openCertModal(title, imagePath) {
+            if (modalTitle) modalTitle.textContent = title;
+
+            // Reset Zoom completely
+            scale = 1;
+            pointX = 0;
+            pointY = 0;
+            modalImg.style.transform = `translate(0px, 0px) scale(1)`;
+
+            if (imagePath) {
+                modalImg.src = imagePath;
+            } else {
+                modalImg.src = 'https://via.placeholder.com/600x400?text=No+Image';
+            }
+
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Stop background scroll
+        }
+
+        // 2. CLOSE MODAL
+        function closeCertModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Resume scroll
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                closeCertModal();
+            }
+        }
+
+        // 3. TRANSFORM UPDATE
+        function updateTransform() {
+            modalImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+        }
+
+        // =========================================
+        // A. DESKTOP: CTRL + SCROLL ZOOM
+        // =========================================
+        if (imageWrapper) {
+            imageWrapper.addEventListener('wheel', (e) => {
+                if (e.ctrlKey) {
+                    e.preventDefault(); // Stop Page Zoom
+
+                    const delta = -e.deltaY;
+                    (delta > 0) ? (scale *= 1.1) : (scale /= 1.1);
+
+                    // Zoom Limits (Min 1x, Max 5x)
+                    if (scale < 1) scale = 1;
+                    if (scale > 5) scale = 5;
+
+                    // Reset Position if Zoom is back to 1
+                    if (scale === 1) { pointX = 0; pointY = 0; }
+
+                    updateTransform();
+                }
+            }, { passive: false });
+
+            // --- DESKTOP DRAG (PANNING) ---
+            imageWrapper.addEventListener('mousedown', (e) => {
+                if (scale > 1) { // Only pan if zoomed in
+                    e.preventDefault();
+                    startX = e.clientX - pointX;
+                    startY = e.clientY - pointY;
+                    panning = true;
+                    imageWrapper.style.cursor = 'grabbing';
+                }
+            });
+
+            imageWrapper.addEventListener('mouseup', () => { panning = false; imageWrapper.style.cursor = 'grab'; });
+            imageWrapper.addEventListener('mouseleave', () => { panning = false; imageWrapper.style.cursor = 'grab'; });
+
+            imageWrapper.addEventListener('mousemove', (e) => {
+                if (!panning) return;
+                e.preventDefault();
+                pointX = e.clientX - startX;
+                pointY = e.clientY - startY;
+                updateTransform();
+            });
+
+            // =========================================
+            // B. MOBILE: PINCH ZOOM & TOUCH DRAG
+            // =========================================
+            let initialDistance = 0;
+            let initialScale = 1;
+
+            imageWrapper.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 2) {
+                    // Two Fingers: Pinch Start
+                    panning = false;
+                    initialDistance = getDistance(e.touches);
+                    initialScale = scale;
+                } else if (e.touches.length === 1 && scale > 1) {
+                    // One Finger: Pan Start
+                    panning = true;
+                    startX = e.touches[0].clientX - pointX;
+                    startY = e.touches[0].clientY - pointY;
+                }
+            }, { passive: false });
+
+            imageWrapper.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 2) {
+                    // Two Fingers: Zooming
+                    e.preventDefault(); // Stop Browser Zoom/Scroll
+                    const currentDistance = getDistance(e.touches);
+                    if (initialDistance > 0) {
+                        const diff = currentDistance / initialDistance;
+                        scale = initialScale * diff;
+
+                        if (scale < 1) scale = 1;
+                        if (scale > 5) scale = 5;
+                        if (scale === 1) { pointX = 0; pointY = 0; }
+
+                        updateTransform();
+                    }
+                } else if (e.touches.length === 1 && panning && scale > 1) {
+                    // One Finger: Panning
+                    e.preventDefault();
+                    pointX = e.touches[0].clientX - startX;
+                    pointY = e.touches[0].clientY - startY;
+                    updateTransform();
+                }
+            }, { passive: false });
+
+            imageWrapper.addEventListener('touchend', () => {
+                panning = false;
+                initialDistance = 0;
+            });
+        }
+
+        function getDistance(touches) {
+            const dx = touches[0].clientX - touches[1].clientX;
+            const dy = touches[0].clientY - touches[1].clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+
+        // 4. CERT SLIDER LOGIC (Auto Scroll)
+        function initCertSlider() {
+            const slider = document.getElementById('certSlider');
+            const dotsContainer = document.getElementById('certSliderDots');
+            if (!slider || !dotsContainer) return;
+
+            const cards = slider.querySelectorAll('.cert-card-premium');
+            if (cards.length === 0) return;
+
+            let autoPlayInterval;
+            dotsContainer.innerHTML = '';
+
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('slider-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    scrollToCertCard(index);
+                    resetCertAutoPlay();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('.slider-dot');
+
+            function scrollToCertCard(index) {
+                const cardWidth = cards[0].offsetWidth;
+                const gap = 16;
+                slider.scrollTo({ left: (cardWidth + gap) * index, behavior: 'smooth' });
+                updateCertDots(index);
+            }
+
+            function updateCertDots(index) {
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[index]) dots[index].classList.add('active');
+            }
+
+            slider.addEventListener('scroll', () => {
+                const cardWidth = cards[0].offsetWidth + 16;
+                const index = Math.round(slider.scrollLeft / cardWidth);
+                updateCertDots(index);
+            });
+
+            function startCertAutoPlay() {
+                if (window.innerWidth >= 1024) return;
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(() => {
+                    const cardWidth = cards[0].offsetWidth + 16;
+                    const maxScroll = slider.scrollWidth - slider.clientWidth;
+                    let nextScroll = slider.scrollLeft + cardWidth;
+                    if (Math.ceil(slider.scrollLeft) >= maxScroll - 10) nextScroll = 0;
+                    slider.scrollTo({ left: nextScroll, behavior: 'smooth' });
+                }, 3000);
+            }
+
+            function stopCertAutoPlay() { clearInterval(autoPlayInterval); }
+            function resetCertAutoPlay() { stopCertAutoPlay(); startCertAutoPlay(); }
+
+            if (window.innerWidth < 1024) {
+                startCertAutoPlay();
+                slider.addEventListener('touchstart', stopCertAutoPlay);
+                slider.addEventListener('touchend', startCertAutoPlay);
+            }
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < 1024) startCertAutoPlay(); else stopCertAutoPlay();
+            });
+        }
+
+        // 7. Services Slider Function (Auto + Dots + Mobile Only Logic)
+        function initServicesSlider() {
+            const slider = document.getElementById('servicesSlider');
+            const dotsContainer = document.getElementById('sliderDots');
+
+            if (!slider || !dotsContainer) return;
+
+            const cards = slider.querySelectorAll('.service-card-v5');
+            if (cards.length === 0) return;
+
+            let autoPlayInterval;
+
+            // A. Dots Clean & Create
+            dotsContainer.innerHTML = '';
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('slider-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    scrollToCard(index);
+                    resetAutoPlay();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('#sliderDots .slider-dot');
+
+            // B. Scroll Logic
+            function scrollToCard(index) {
+                const cardWidth = cards[0].offsetWidth;
+                const gap = 20;
+                slider.scrollTo({
+                    left: (cardWidth + gap) * index,
+                    behavior: 'smooth'
+                });
+                updateDots(index);
+            }
+
+            function updateDots(index) {
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[index]) dots[index].classList.add('active');
+            }
+
+            // C. Sync Dots on Swipe/Scroll
+            slider.addEventListener('scroll', () => {
+                const cardWidth = cards[0].offsetWidth + 20;
+                const index = Math.round(slider.scrollLeft / cardWidth);
+                updateDots(index);
+            });
+
+            // D. Automatic Slider Logic (2 Seconds)
+            function startAutoPlay() {
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(() => {
+                    const cardWidth = cards[0].offsetWidth + 20;
+                    const maxScroll = slider.scrollWidth - slider.clientWidth;
+                    let nextScroll = slider.scrollLeft + cardWidth;
+                    if (Math.ceil(slider.scrollLeft) >= maxScroll - 10) {
+                        nextScroll = 0;
+                    }
+                    slider.scrollTo({ left: nextScroll, behavior: 'smooth' });
+                }, 2000);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            function resetAutoPlay() {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+
+            // E. Mobile Check
+            if (window.innerWidth < 768) {
+                startAutoPlay();
+                slider.addEventListener('touchstart', stopAutoPlay);
+                slider.addEventListener('touchend', startAutoPlay);
+            }
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < 768) startAutoPlay();
+                else stopAutoPlay();
+            });
+        }
+
+        /* =========================================
+         CERTIFICATION SLIDER & MODAL & ZOOM LOGIC (FINAL CORRECTED)
+         ========================================= */
+
+        let currentZoom = 1; // Default Scale
+
+        // 1. Modal Logic (View Image)
+        function openCertModal(title, imagePath) {
+            const modal = document.getElementById('certModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+
+            if (modalTitle) modalTitle.textContent = title;
+
+            // Reset Zoom when opening new image
+            currentZoom = 1;
+            modalImg.style.transform = `scale(${currentZoom})`;
+
+            // Set Image Path
+            if (imagePath) {
+                modalImg.src = imagePath;
+            } else {
+                modalImg.src = 'https://via.placeholder.com/600x400?text=No+Image';
+            }
+
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // 2. Zoom Functions
+        function zoomIn() {
+            currentZoom += 0.2;
+            if (currentZoom > 3) currentZoom = 3;
+            updateZoom();
+        }
+
+        function zoomOut() {
+            currentZoom -= 0.2;
+            if (currentZoom < 0.5) currentZoom = 0.5;
+            updateZoom();
+        }
+
+        function resetZoom() {
+            currentZoom = 1;
+            updateZoom();
+        }
+
+        function updateZoom() {
+            const img = document.getElementById('modalImage');
+            if (img) {
+                img.style.transform = `scale(${currentZoom})`;
+            }
+        }
+
+        // Close if clicked outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('certModal');
+            if (event.target == modal) {
+                closeCertModal();
+            }
+        }
+
+        // 3. Slider Logic (Auto Scroll for All Screens)
+        function initCertSlider() {
+            const slider = document.getElementById('certSlider');
+            const dotsContainer = document.getElementById('certSliderDots');
+
+            if (!slider || !dotsContainer) return;
+
+            const cards = slider.querySelectorAll('.cert-card-premium');
+            if (cards.length === 0) return;
+
+            let autoPlayInterval;
+
+            // A. Create Dots (Unique Classes)
+            dotsContainer.innerHTML = '';
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+
+                // 'slider-dot' chya aivaji 'cert-slider-dot' vaparla
+                dot.classList.add('cert-slider-dot');
+
+                if (index === 0) dot.classList.add('active');
+
+                dot.addEventListener('click', () => {
+                    scrollToCertCard(index);
+                    resetCertAutoPlay();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            // Select karta na pan navin class vapara
+            const dots = dotsContainer.querySelectorAll('.cert-slider-dot');
+
+            // B. Scroll Logic
+            function scrollToCertCard(index) {
+                const cardWidth = cards[0].offsetWidth;
+                const gap = 20; // CSS gap matches JS gap
+                slider.scrollTo({
+                    left: (cardWidth + gap) * index,
+                    behavior: 'smooth'
+                });
+                updateCertDots(index);
+            }
+
+            function updateCertDots(index) {
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[index]) dots[index].classList.add('active');
+            }
+
+            slider.addEventListener('scroll', () => {
+                const cardWidth = cards[0].offsetWidth + 20;
+                const index = Math.round(slider.scrollLeft / cardWidth);
+                updateCertDots(index);
+            });
+
+            // C. Auto Play Logic
+            function startCertAutoPlay() {
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+
+                autoPlayInterval = setInterval(() => {
+                    const cards = document.querySelectorAll('.cert-card-premium');
+                    const slider = document.getElementById('certSlider');
+
+                    if (!slider || cards.length === 0) return;
+
+                    const cardWidth = cards[0].offsetWidth + 20;
+                    const maxScroll = slider.scrollWidth - slider.clientWidth;
+                    let nextScroll = slider.scrollLeft + cardWidth;
+
+                    // Loop back to start logic
+                    if (Math.ceil(slider.scrollLeft) >= maxScroll - 50) {
+                        nextScroll = 0;
+                    }
+
+                    slider.scrollTo({
+                        left: nextScroll,
+                        behavior: 'smooth'
+                    });
+                }, 3000);
+            }
+
+            function stopCertAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            function resetCertAutoPlay() {
+                stopCertAutoPlay();
+                startCertAutoPlay();
+            }
+
+            // --- MAIN CHANGE: Remove width check so it runs on Desktop too ---
+
+            // 1. Start AutoPlay immediately
+            startCertAutoPlay();
+
+            // 2. Mobile Touch Events
+            slider.addEventListener('touchstart', stopCertAutoPlay);
+            slider.addEventListener('touchend', startCertAutoPlay);
+
+            // 3. Desktop Mouse Events
+            slider.addEventListener('mouseenter', stopCertAutoPlay);
+            slider.addEventListener('mouseleave', startCertAutoPlay);
+
+            // 4. Resize Handling
+            window.addEventListener('resize', () => {
+                resetCertAutoPlay();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initCertSlider();
+        });
+
+        // 8. NEW: Achievements Slider Function (Exact Replica of Services)
+        function initAchievementSlider() {
+            const slider = document.getElementById('achievementsSlider');
+            const dotsContainer = document.getElementById('achSliderDots');
+
+            if (!slider || !dotsContainer) return;
+
+            const cards = slider.querySelectorAll('.achievement-card-premium');
+            if (cards.length === 0) return;
+
+            let autoPlayInterval;
+
+            // A. Dots Clean & Create
+            dotsContainer.innerHTML = '';
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('slider-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    scrollToCard(index);
+                    resetAutoPlay();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('#achSliderDots .slider-dot');
+
+            // B. Scroll Logic
+            function scrollToCard(index) {
+                const cardWidth = cards[0].offsetWidth;
+                const gap = 20;
+                slider.scrollTo({
+                    left: (cardWidth + gap) * index,
+                    behavior: 'smooth'
+                });
+                updateDots(index);
+            }
+
+            function updateDots(index) {
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[index]) dots[index].classList.add('active');
+            }
+
+            // C. Sync Dots on Swipe/Scroll
+            slider.addEventListener('scroll', () => {
+                const cardWidth = cards[0].offsetWidth + 20;
+                const index = Math.round(slider.scrollLeft / cardWidth);
+                updateDots(index);
+            });
+
+            // D. Automatic Slider Logic (2 Seconds)
+            function startAutoPlay() {
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(() => {
+                    const cardWidth = cards[0].offsetWidth + 20;
+                    const maxScroll = slider.scrollWidth - slider.clientWidth;
+                    let nextScroll = slider.scrollLeft + cardWidth;
+                    if (Math.ceil(slider.scrollLeft) >= maxScroll - 10) {
+                        nextScroll = 0;
+                    }
+                    slider.scrollTo({ left: nextScroll, behavior: 'smooth' });
+                }, 2000);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            function resetAutoPlay() {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+
+            // E. Mobile Check
+            if (window.innerWidth < 768) {
+                startAutoPlay();
+                slider.addEventListener('touchstart', stopAutoPlay);
+                slider.addEventListener('touchend', startAutoPlay);
+            }
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < 768) startAutoPlay();
+                else stopAutoPlay();
+            });
+        }
+
+        // 9. Dynamic Section Loader
+        function loadSection(id, file) {
+            fetch(file)
+                .then(res => {
+                    if (!res.ok) throw new Error(file + " not found");
+                    return res.text();
+                })
+                .then(data => {
+                    const container = document.getElementById(id);
+                    if (!container) return;
+                    container.innerHTML = data;
+
+                    // --- Slider Initializations based on ID ---
+                    if (id === 'blog-content') setTimeout(initBlogSlider, 500);
+                    if (id === 'portfolio-content') setTimeout(initProjectSlider, 500);
+                    if (id === 'services-content') setTimeout(initServicesSlider, 500);
+                    if (id === 'education-content') setTimeout(initEducationSlider, 500);
+                    if (id === 'experience-content') setTimeout(initExperienceSlider, 500);
+                    if (id === 'achievements-content') setTimeout(initAchievementSlider, 500);
+                    if (id === 'certificates-content') setTimeout(initCertSlider, 500);
+                    setTimeout(() => { AOS.refreshHard(); }, 300);
+                })
+                .catch(err => console.error(err));
+        }
+
+        // 10. Contact Form Handling
+        document.addEventListener('submit', function (e) {
+            if (e.target && e.target.id === 'contactForm') {
+                e.preventDefault();
+                const modal = document.getElementById('successModal');
+                if (modal) {
+                    modal.classList.add('active');
+                    e.target.reset();
+                }
+            }
+        });
+
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.id === 'closeModalBtn') {
+                const modal = document.getElementById('successModal');
+                if (modal) modal.classList.remove('active');
+            }
+        });
+
+        // 11. Initial Load Calls
+        loadSection("about-content", "about.html");
+        loadSection("education-content", "education.html");
+        loadSection("experience-content", "experience.html");
+        loadSection("skills-content", "skills.html");
+        loadSection("services-content", "services.html");
+        loadSection("portfolio-content", "portfolio.html");
+        loadSection("certificates-content", "certificates.html");
+        loadSection("achievements-content", "achievements.html");
+        loadSection("blog-content", "blog.html");
+        loadSection("contact-content", "contact.html");
+
+    </script>
+</body>
+
+</html>
