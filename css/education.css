@@ -1,0 +1,381 @@
+/* --- Education Container --- */
+.edu-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Desktop: 3 Columns */
+    gap: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 15px;
+    align-items: stretch;
+    /* IMPORTANT: Ensures equal height on Desktop */
+}
+
+/* --- Card Style --- */
+.edu-card-premium {
+    background: #ffffff;
+    border: 2px solid #b8c2cc !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    height: 100%;
+    /* Fills the container height */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    position: relative;
+    user-select: none;
+}
+
+.dark .edu-card-premium {
+    background: #1e293b;
+    border-color: #475569 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Animation (Desktop Only) */
+.edu-card-premium:hover {
+    transform: translateY(-10px) scale(1.03) !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.15) !important;
+    z-index: 10;
+}
+
+.dark .edu-card-premium:hover {
+    border-color: #60a5fa !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* --- Banner --- */
+.edu-banner {
+    width: 100%;
+    height: 160px;
+    background: #f1f5f9;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Content Wrapper --- */
+.edu-content-wrapper {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Pushes content to fill height */
+}
+
+/* --- Header --- */
+.edu-top-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.edu-icon-box {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+/* Logo Hover Effect */
+.edu-card-premium:hover .edu-icon-box {
+    background: #eff6ff;
+    border-color: #2563eb;
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.institution-name {
+    font-size: 1.2rem;
+    /* Desktop Font */
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.dark .institution-name {
+    color: #f8fafc;
+}
+
+/* --- Degree --- */
+.degree-name {
+    font-size: 1.05rem;
+    /* Desktop Font */
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e2e8f0;
+    display: flex;
+    align-items: center;
+}
+
+.dark .degree-name {
+    color: #60a5fa;
+    border-bottom-color: #334155;
+}
+
+.field-icon {
+    margin-right: 10px;
+    color: #2563eb;
+    font-size: 1.1rem;
+}
+
+.dark .field-icon {
+    color: #60a5fa;
+}
+
+/* --- Meta Row (Badges) --- */
+.edu-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+    width: 100%;
+}
+
+.grade-badge,
+.status-badge,
+.edu-duration {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.field-icon-small {
+    margin-right: 6px;
+    font-size: 0.85rem;
+}
+
+.grade-badge {
+    background: #ecfccb;
+    color: #4d7c0f;
+    border: 1px solid #d9f99d;
+}
+
+.status-badge {
+    background: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+}
+
+.edu-duration {
+    background: #f8fafc;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.dark .grade-badge {
+    background: #365314;
+    color: #bef264;
+    border-color: #4d7c0f;
+}
+
+.dark .status-badge {
+    background: #1e3a8a;
+    color: #bfdbfe;
+    border-color: #1d4ed8;
+}
+
+.dark .edu-duration {
+    background: #0f172a;
+    color: #cbd5e1;
+    border-color: #334155;
+}
+
+/* --- POINTS LIST --- */
+.edu-point-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edu-point-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    /* Desktop Font */
+    line-height: 1.6;
+    color: #475569;
+    text-align: left;
+}
+
+.dark .edu-point-list li {
+    color: #94a3b8;
+}
+
+/* Bullet Icon */
+.list-bullet {
+    width: 20px;
+    height: 20px;
+    background: rgba(37, 99, 235, 0.75);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 3px;
+    font-size: 10px;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.15);
+}
+
+.dark .list-bullet {
+    background: rgba(96, 165, 250, 0.75);
+    color: #ffffff;
+}
+
+.edu-point-list li strong {
+    color: #334155;
+    font-weight: 600;
+}
+
+.dark .edu-point-list li strong {
+    color: #e2e8f0;
+}
+
+
+/* --- MOBILE & TABLET FIXES (IMPORTANT) --- */
+@media (max-width: 1024px) {
+    .edu-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* Container: Padding KAMI kela ahe extra space kadhnya sathi */
+    .edu-grid-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding: 35px 5px 25px 5px;
+        /* Reduced Padding */
+        scrollbar-width: none;
+        align-items: stretch;
+        /* Ensures Equal Height on Mobile */
+    }
+
+    .edu-grid-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Card: Fits perfectly in screen */
+    .edu-card-premium {
+        min-width: 87vw !important;
+        width: 87vw !important;
+        scroll-snap-align: center;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* TAP EFFECT: Blue Border on Touch */
+    .edu-card-premium:active {
+        border-color: #2563eb !important;
+        transform: scale(0.99) !important;
+    }
+
+    /* Content Padding Reduced */
+    .edu-content-wrapper {
+        padding: 1rem;
+    }
+
+    /* --- FONT SIZE REDUCTION FOR MOBILE --- */
+    .institution-name {
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
+
+    /* Smaller */
+    .degree-name {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    /* Smaller */
+    .field-icon {
+        font-size: 0.85rem;
+        margin-right: 6px;
+    }
+
+    .edu-point-list li {
+        font-size: 0.75rem;
+        /* Text size reduced */
+        gap: 8px;
+        line-height: 1.5;
+    }
+
+    .list-bullet {
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
+        margin-top: 2px;
+    }
+
+    /* Badges Wrap & Small Size */
+    .edu-meta-row {
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 0.8rem;
+    }
+
+    .grade-badge,
+    .status-badge,
+    .edu-duration {
+        font-size: 0.68rem;
+        /* Very Compact */
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+
+    .field-icon-small {
+        margin-right: 4px;
+        font-size: 0.7rem;
+    }
+
+    /* Slider Dots */
+    .slider-dots-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: -5px;
+        padding-bottom: 10px;
+    }
+
+    .slider-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #e2e8f0;
+    }
+
+    .slider-dot.active {
+        background: #2563eb;
+        width: 10px;
+        height: 10px;
+    }
+}
