@@ -1,0 +1,435 @@
+/* =========================================
+   EXPERIENCE SECTION STYLES (FINAL)
+   ========================================= */
+
+/* --- Animation --- */
+@keyframes smoothFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* --- Container & Grid --- */
+.experience-wrapper {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.exp-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Desktop: 3 Columns */
+    gap: 24px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    align-items: stretch;
+}
+
+/* --- PREMIUM CARD DESIGN --- */
+.exp-card-premium {
+    background: #ffffff;
+    border: 2px solid #b8c2cc !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    user-select: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.4s ease !important;
+
+    /* Animation */
+    opacity: 0;
+    animation: smoothFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+}
+
+.exp-card-premium:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.2) !important;
+    z-index: 10;
+}
+
+/* Stagger Animation delays */
+.exp-card-premium:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.exp-card-premium:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.exp-card-premium:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.exp-card-premium:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.exp-card-premium:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.exp-card-premium:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Dark Mode */
+.dark .exp-card-premium {
+    background: #1e293b;
+    border-color: #475569 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dark .exp-card-premium:hover {
+    border-color: #60a5fa !important;
+    box-shadow: 0 25px 50px -12px rgba(96, 165, 250, 0.25) !important;
+}
+
+/* --- Content Wrapper --- */
+.exp-content-wrapper {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+}
+
+/* Header */
+.exp-header-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.dark .exp-header-row {
+    border-bottom-color: #334155;
+}
+
+/* Icon Box */
+.exp-icon-box {
+    width: 52px;
+    height: 52px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.exp-card-premium:hover .exp-icon-box {
+    transform: rotate(-8deg) scale(1.1);
+    background-color: #eff6ff;
+    border-color: #2563eb;
+}
+
+.exp-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Typography (Desktop Defaults) */
+.exp-role {
+    font-size: 0.9rem;
+    /* Desktop size */
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 2px;
+}
+
+.exp-company {
+    font-size: 0.8rem !important;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 4px;
+}
+
+.dark .exp-role {
+    color: #f8fafc;
+}
+
+.dark .exp-company {
+    color: #94a3b8;
+}
+
+.exp-meta-line {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.exp-meta-line i {
+    color: #2563eb;
+    font-size: 0.8rem;
+    width: 14px;
+    text-align: center;
+}
+
+/* Description List (Desktop Default) */
+.exp-desc {
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.exp-point-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.exp-point-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    /* DESKTOP FONT SIZE */
+    line-height: 1.6;
+    color: #334155;
+    text-align: left;
+}
+
+.dark .exp-point-list li {
+    color: #94a3b8;
+}
+
+.list-bullet {
+    width: 18px;
+    height: 18px;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 9px;
+    margin-top: 4px;
+}
+
+/* Footer & Skills */
+.exp-footer {
+    margin-top: auto;
+}
+
+.exp-skills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-bottom: 12px;
+    width: 100%;
+}
+
+.exp-skills-wrap span {
+    font-size: 0.7rem;
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 3px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+    border: 1px solid #dbeafe;
+
+}
+
+.dark .exp-skills-wrap span {
+    background: #1e293b;
+    color: #60a5fa;
+    border-color: #334155;
+}
+
+/* Buttons */
+.exp-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid #f1f5f9;
+    width: 100%;
+}
+
+.dark .exp-btn-row {
+    border-top-color: #334155;
+}
+
+.exp-doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    background: #f8fafc;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.exp-doc-btn:hover {
+    background: #eff6ff;
+    color: #2563eb;
+    border-color: #dbeafe;
+}
+
+/* =========================================
+   RESPONSIVE FONTS & LAYOUT (SEPARATE)
+   ========================================= */
+
+/* --- TABLET (iPad / Small Laptops) --- */
+@media (max-width: 1024px) {
+    .exp-grid-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 20px;
+        grid-template-columns: none;
+        scrollbar-width: none;
+    }
+
+    .exp-grid-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .exp-card-premium {
+        min-width: 45vw;
+        /* Show 2 cards slightly */
+        width: 45vw;
+        scroll-snap-align: center;
+        height: auto;
+    }
+
+    /* --- TABLET SPECIFIC FONTS --- */
+    .exp-role {
+        font-size: 1rem;
+        /* Slightly smaller than desktop */
+    }
+
+    .exp-point-list li {
+        font-size: 0.85rem !important;
+        /* TABLET FONT SIZE */
+        line-height: 1.55;
+    }
+
+    .slider-dots-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+
+    .slider-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .slider-dot.active {
+        background: #2563eb;
+        width: 24px;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 767px) {
+    .exp-card-premium {
+        min-width: 87vw !important;
+        /* Full width card on mobile */
+        width: 87vw !important;
+        margin: 0 auto;
+    }
+
+    .exp-content-wrapper {
+        padding: 16px;
+        /* Less padding on mobile */
+    }
+
+    /* --- MOBILE SPECIFIC FONTS (Requested) --- */
+    .exp-role {
+        font-size: 0.9rem !important;
+        /* Mobile Role Size */
+    }
+
+    .exp-company {
+        font-size: 0.8rem !important;
+    }
+
+    .exp-point-list li {
+        font-size: 0.75rem !important;
+        /* MOBILE FONT SIZE (Small) */
+        line-height: 1.5;
+    }
+
+    .list-bullet {
+        margin-top: 2px;
+        /* Align bullet with smaller text */
+    }
+
+    /* DOTS CONTAINER (Visible only on touch devices) */
+    .slider-dots-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+
+    .slider-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .slider-dot.active {
+        background: #2563eb;
+        width: 24px;
+        border-radius: 4px;
+    }
+
+    .exp-skills-wrap {
+        gap: 5px;
+    }
+
+    .exp-skills-wrap span {
+        font-size: 0.65rem !important;
+        padding: 2px 6px;
+        font-weight: 600;
+    }
+}
