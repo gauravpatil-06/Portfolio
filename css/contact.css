@@ -1,0 +1,482 @@
+/* --- Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
+
+/* --- CONTACT SECTION WRAPPER --- */
+.contact-section {
+    padding: 60px 20px;
+    /* Top/Bottom padding added */
+    display: flex;
+    justify-content: center;
+    /* Horizontally Center */
+    align-items: center;
+    /* Vertically Center items */
+    width: 100%;
+    min-height: auto;
+}
+
+/* --- CENTER CONTAINER (MAIN FIX) --- */
+.container-custom {
+    max-width: 1300px;
+    /* Fixed Max Width */
+    width: 100%;
+    /* Takes full width up to 1200px */
+    margin: 0 auto;
+    /* AUTO MARGIN is key for centering */
+    padding: 0 15px;
+    /* Internal spacing */
+    display: block;
+    /* Ensures it behaves like a block for margin:auto */
+}
+
+/* --- GRID LAYOUT --- */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+    /* Center grid items */
+}
+
+/* --- SHARED CARD STYLE --- */
+.contact-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    /* Ensures both cards match height if needed */
+}
+
+/* Dark mode support */
+html.dark .contact-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+html.dark .card-title {
+    color: #fff;
+}
+
+html.dark .sub-text,
+html.dark .info-text .value {
+    color: #cbd5e1;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    border-color: #2563eb;
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: #2563eb;
+    bottom: -8px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.sub-text {
+    font-size: 1.05rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* --- INFO LIST --- */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background: #f3f4f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: 0.3s;
+    flex-shrink: 0;
+    /* Prevents icon shrinking */
+}
+
+.contact-card:hover .icon-circle {
+    background: #2563eb;
+    color: white;
+    transform: rotate(360deg);
+}
+
+.info-text .label {
+    display: block;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.info-text .value {
+    font-size: 1.05rem;
+    color: #374151;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.value.link:hover {
+    color: #2563eb;
+}
+
+/* --- SOCIAL ICONS --- */
+.social-section {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.s-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+.s-btn:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Social Colors */
+.linkedin:hover {
+    background: #0077b5;
+}
+
+.github:hover {
+    background: #333;
+}
+
+.twitter:hover {
+    background: #000;
+}
+
+.email:hover {
+    background: #ea4335;
+}
+
+.instagram:hover {
+    background: #e4405f;
+}
+
+.whatsapp:hover {
+    background: #25D366;
+}
+
+/* --- FORM STYLE --- */
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    color: #1f2937;
+    transition: 0.3s;
+}
+
+.input-box textarea {
+    height: 140px;
+    resize: none;
+    padding-top: 15px;
+}
+
+.input-box span {
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 1rem;
+    color: #9ca3af;
+    transition: 0.3s;
+    background: #ffffff;
+    padding: 0 5px;
+}
+
+.input-box textarea~span {
+    top: 24px;
+    transform: none;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input-box textarea~.input-icon {
+    top: 24px;
+    transform: none;
+}
+
+.input-box input:focus,
+.input-box textarea:focus,
+.input-box input:valid,
+.input-box textarea:valid {
+    border-color: #2563eb;
+    border-width: 2px;
+}
+
+.input-box input:focus~span,
+.input-box textarea:focus~span,
+.input-box input:valid~span,
+.input-box textarea:valid~span {
+    color: #2563eb;
+    font-size: 0.85rem;
+    font-weight: 600;
+    top: 0;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.input-box input:focus~.input-icon,
+.input-box textarea:focus~.input-icon {
+    color: #2563eb;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* --- MAP SECTION --- */
+.map-section {
+    width: 100%;
+    padding: 0 0 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Map also uses container-custom now for alignment */
+.map-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-in-out;
+}
+
+.map-container:hover {
+    filter: grayscale(0%);
+    border-color: #2563eb;
+}
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e5e7eb;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px auto;
+    object-fit: contain;
+}
+
+.success-heading {
+    color: #28a745;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.modal-close-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- RESPONSIVE FIX (MOBILE ONLY) --- */
+@media (max-width: 768px) {
+
+    /* 1. Side space kami keli jyane box purna kadekade disel */
+    .contact-section {
+        padding: 20px 5px !important;
+    }
+
+    .container-custom {
+        padding: 0 5px !important;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* 2. Box chi width About Me section sarkhi purna keli */
+    .contact-card {
+        width: 100% !important;
+        padding: 15px !important;
+        margin: 0 auto !important;
+        border-radius: 20px !important;
+    }
+
+    /* 3. Email baher jau naye mhanun font lahan ani word-break kela */
+    .info-text .value {
+        font-size: 0.82rem !important;
+        word-break: break-all !important;
+    }
+
+    .card-title {
+        font-size: 1.3rem !important;
+    }
+
+    /* 4. Shevatcha 6va icon khali yet hota to ata ekach line madhe disel */
+    .social-icons {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        /* Icons khali janar nahit */
+        gap: 8px !important;
+        /* Icons madhal gap kami kela */
+        justify-content: flex-start !important;
+        overflow-x: auto;
+        /* Jar width kami padli tar scroll hoil, pan khali janar nahi */
+        padding-bottom: 5px;
+    }
+
+    .s-btn {
+        width: 35px !important;
+        /* Icon chi size thodi lahan keli */
+        height: 35px !important;
+        font-size: 0.9rem !important;
+        flex-shrink: 0 !important;
+        /* Icon dable janar nahit */
+    }
+}
