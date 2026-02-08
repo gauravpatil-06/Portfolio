@@ -1,0 +1,313 @@
+/* =========================================
+   PORTFOLIO LOAD ANIMATION FIX
+   ========================================= */
+
+/* 1. Animation Keyframes (Must be at the top) */
+@keyframes projectLoadUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Slider Container */
+.project-slider-container {
+    font-family: 'Inter', sans-serif;
+    padding: 40px 0;
+}
+
+/* 3. Slider Track */
+.project-track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 24px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* 4. Card Design (Height & Animation Fixed) */
+.project-card-v7 {
+    width: calc(25% - 18px) !important;
+    flex-shrink: 0 !important;
+    background: #ffffff !important;
+    border: 2px solid #cbd5e1 !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out !important;
+    display: flex;
+    flex-direction: column;
+    height: 555px !important;
+
+    /* --- ANIMATION FIX --- */
+    opacity: 0;
+    /* Survatila Invisible */
+    animation: projectLoadUp 0.8s ease-out forwards !important;
+    /* !important lavla ahe mhanje animation force hoil */
+}
+
+/* 5. Staggered Delays (Wave Effect) */
+.project-card-v7:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.project-card-v7:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.project-card-v7:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.project-card-v7:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.project-card-v7:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.project-card-v7:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Dark Mode */
+.dark .project-card-v7 {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+}
+
+/* Hover Effect */
+.project-card-v7:hover {
+    transform: translateY(-5px) !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Image Box */
+.p-img-box {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 2px solid #f1f5f9;
+    flex-shrink: 0;
+}
+
+.p-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-card-v7:hover .p-img-box img {
+    transform: scale(1.08);
+}
+
+/* Content */
+.p-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Date Badge */
+.p-date-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f1f5f9;
+    color: #475569;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    width: fit-content;
+    border: 1px solid #e2e8f0;
+}
+
+.dark .p-date-badge {
+    background-color: #1e293b;
+    color: #94a3b8;
+    border-color: #334155;
+}
+
+/* Title */
+.p-title {
+    font-size: 1.1rem !important;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: #1e293b;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 46px;
+    flex-shrink: 0;
+}
+
+.dark .p-title {
+    color: #f8fafc !important;
+}
+
+/* Description */
+.p-desc {
+    font-size: 0.9rem !important;
+    color: #334155;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: left;
+    font-weight: 500;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.dark .p-desc {
+    color: #cbd5e1 !important;
+}
+
+/* Footer */
+.p-footer {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* Tech Stack */
+.p-tech-stack {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.p-tech-stack::-webkit-scrollbar {
+    display: none;
+}
+
+.p-tech-stack span {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border: 1px solid #dbeafe;
+    white-space: nowrap;
+}
+
+.dark .p-tech-stack span {
+    background: #1e293b;
+    color: #60a5fa;
+    border-color: #334155;
+}
+
+/* Action Link */
+.p-action-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.text-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.text-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    z-index: 50;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.left-arrow {
+    left: -24px;
+}
+
+.right-arrow {
+    right: -24px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .project-card-v7 {
+        width: calc(50% - 12px) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .project-card-v7 {
+        width: 98% !important;
+        min-width: 98% !important;
+        margin: 0 auto !important;
+        scroll-snap-align: center;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+
+    .slider-arrow {
+        display: flex !important;
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .left-arrow {
+        left: 5px !important;
+    }
+
+    .right-arrow {
+        right: 5px !important;
+    }
+
+    .project-track {
+        gap: 12px !important;
+    }
+
+    .project-slider-container {
+        padding: 0 5px;
+    }
+}

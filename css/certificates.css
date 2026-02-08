@@ -1,0 +1,739 @@
+/* =========================================
+   CERTIFICATION SECTION (FINAL)
+   ========================================= */
+
+.cert-wrapper {
+    position: relative;
+    padding-bottom: 80px;
+    background: transparent;
+}
+
+.cert-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    /* Reduced Gap */
+    padding-top: 15px;
+    padding-bottom: 20px;
+    align-items: stretch;
+}
+
+/* --- CARD DESIGN --- */
+.cert-card-premium {
+    background: #ffffff;
+    border: 2px solid #b8c2cc;
+    border-radius: 16px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    /* 1. Height Auto (Content nusar) */
+    height: auto;
+
+    /* 2. Flex Shrink 0 (Slider sathi imp) */
+    flex-shrink: 0;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    scroll-snap-align: start;
+
+    /* 3. Width Calculation (Perfect 3 Cards: 100% - 2 gaps / 3) */
+    min-width: calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
+}
+
+.cert-card-premium:hover {
+    transform: translateY(-10px);
+    border-color: #2563eb;
+    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.2);
+}
+
+.dark .cert-card-premium {
+    background: #1e293b;
+    border-color: #475569;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark .cert-card-premium:hover {
+    border-color: #60a5fa;
+    box-shadow: 0 20px 40px -10px rgba(96, 165, 250, 0.25);
+}
+
+/* --- Header Section (Transparent & Compact) --- */
+.cert-header-row {
+    padding: 15px 20px;
+    background: transparent;
+    /* Transparent BG */
+    border-bottom: 1px dashed #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dark .cert-header-row {
+    background: transparent;
+    border-bottom-color: #334155;
+}
+
+/* Icon Box */
+.cert-icon-box {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.cert-card-premium:hover .cert-icon-box {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.cert-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Typography (Theme Adaptive) --- */
+.cert-role {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.dark .cert-role {
+    color: #f1f5f9;
+}
+
+/* --- List Styling --- */
+.cert-body {
+    padding: 5px 0;
+    flex-grow: 1;
+}
+
+.cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cert-list li {
+    display: flex;
+    align-items: flex-start;
+    /* Icon vrachya line la rahil */
+    gap: 10px;
+    padding: 8px 18px;
+
+    /* Text Wrapping Logic (IMP) */
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    border-bottom: 1px solid transparent;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+    color: #475569;
+}
+
+.dark .cert-list li {
+    color: #cbd5e1;
+    /* Dark mode text */
+}
+
+.cert-list li:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.dark .cert-list li:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.cert-list li:hover {
+    background-color: #eff6ff;
+    padding-left: 25px;
+    color: #1e293b;
+}
+
+.dark .cert-list li:hover {
+    background-color: rgba(37, 99, 235, 0.15);
+    color: #ffffff;
+}
+
+.cert-list-bullet {
+    width: 20px;
+    height: 20px;
+    background: #dbeafe;
+    color: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 10px;
+    transition: all 0.3s ease;
+}
+
+.cert-list li:hover .cert-list-bullet {
+    background: #2563eb;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.cert-name {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.cert-view-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.cert-view-icon:hover {
+    color: #2563eb;
+    background: #eff6ff;
+    transform: scale(1.1);
+}
+
+/* =========================================
+   CERTIFICATION MODAL (FIXED CLOSE BUTTON)
+   ========================================= */
+
+/* 1. Modal Overlay */
+.cert-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Background thoda dark kela */
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cert-modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+/* 2. Modal Content (Wrapper) */
+.cert-modal-content {
+    position: relative;
+    /* Button yachya relative rahil */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Auto Size Logic */
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+/* 3. CLOSE BUTTON (FIXED INSIDE CORNER) */
+.cert-close-btn {
+    position: absolute;
+    top: 15px;
+    /* Varun thoda aat */
+    right: 15px;
+    /* Ujavikadun thoda aat */
+
+    width: 32px;
+    height: 32px;
+
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent black */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 100;
+    /* Image cha var disla pahije */
+}
+
+.cert-close-btn:hover {
+    background: #ef4444;
+    /* Red on hover */
+    border-color: #ef4444;
+    transform: rotate(90deg);
+}
+
+/* 4. GLOWING BORDER WRAPPER */
+.gradient-border-box {
+    position: relative;
+    padding: 2px;
+    /* Border thickness */
+    border-radius: 12px;
+    background: #1e293b;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.3);
+
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+
+.gradient-border-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            #2563eb 90deg,
+            transparent 180deg,
+            #2563eb 270deg,
+            transparent 360deg);
+    animation: rotate-border 4s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotate-border {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 5. VIEWPORT (Black Box) */
+.cert-image-viewport {
+    position: relative;
+    background: #000;
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-image-viewport:active {
+    cursor: grabbing;
+}
+
+/* 6. IMAGE */
+.cert-image-viewport img {
+    /* Maximum limits to fit screen */
+    max-height: 80vh;
+    max-width: 85vw;
+
+    /* Natural Size */
+    width: auto;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+
+    transform-origin: center center;
+    transition: transform 0.1s linear;
+    user-select: none;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* 7. Caption */
+.modal-caption {
+    margin-top: 12px;
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+    pointer-events: none;
+    /* Allows clicking through if needed */
+}
+
+.modal-caption h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.modal-caption p {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    opacity: 0.8;
+}
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+    .cert-close-btn {
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        /* Thoda motha touch sathi */
+        height: 36px;
+    }
+
+    .cert-image-viewport img {
+        max-height: 70vh;
+        max-width: 90vw;
+    }
+}
+
+/* --- Keep previous slider CSS below this --- */
+.cert-wrapper {
+    position: relative;
+    padding-bottom: 80px;
+    background: transparent;
+}
+
+.cert-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding-bottom: 20px;
+    align-items: stretch;
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT (FINAL - SLIDER EVERYWHERE)
+   ========================================= */
+
+/* 1. TABLET & SMALL LAPTOP & VIVO DESKTOP MODE */
+/* Range: 769px to 1024px -> Show Slider with 2 Cards */
+@media (max-width: 1024px) {
+    .cert-grid-container {
+        display: flex;
+        /* Grid kadhun Flex kela (Slider sathi) */
+        overflow-x: auto;
+        /* Horizontal Scroll active */
+        scroll-snap-type: x mandatory;
+        /* Snap effect */
+        gap: 20px;
+        padding-bottom: 25px;
+        scrollbar-width: none;
+        /* Firefox scrollbar hide */
+        grid-template-columns: none;
+        align-items: stretch;
+        /* Grid reset */
+    }
+
+    .cert-grid-container::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari scrollbar hide */
+    }
+
+    .cert-card-premium {
+        /* Screen chya 50% width (minus gap) mhanje 2 cards distil */
+        min-width: calc(50% - 15px);
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        /* Left side la snap hoil */
+    }
+}
+
+/* 2. MOBILE ONLY */
+/* Range: 0px to 768px -> Show Slider with 1 Card */
+@media (max-width: 768px) {
+    .cert-card-premium {
+        /* Mobile var card mothi disel (1 card view) */
+        min-width: 88vw;
+        scroll-snap-align: center;
+        /* Center la snap hoil */
+    }
+}
+
+/* =========================================
+   CERTIFICATION SECTION (FINAL - SLIDER MODE)
+   ========================================= */
+
+.cert-wrapper {
+    position: relative;
+    padding-bottom: 80px;
+    background: transparent;
+}
+
+/* 1. CONTAINER (Slider Mode Always) */
+.cert-grid-container {
+    display: flex;
+    /* Grid kadhun Flex kela */
+    gap: 20px;
+    overflow-x: auto;
+    /* Horizontal Scroll ON */
+    scroll-snap-type: x mandatory;
+    /* Smooth Snap Effect */
+    pt padding-bottom: 25px;
+    /* Scrollbar sathi jaga */
+    scrollbar-width: none;
+    /* Firefox scrollbar hide */
+    align-items: stretch;
+}
+
+/* Chrome/Safari Scrollbar Hide */
+.cert-grid-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* 2. CARD DESIGN & DESKTOP SIZE */
+.cert-card-premium {
+    background: #ffffff;
+    border: 2px solid #b8c2cc;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* DEFAULT DESKTOP: 3 Cards (100% / 3 = 33.33%) */
+    min-width: calc(33.333% - 14px);
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.cert-card-premium:hover {
+    transform: translateY(-10px);
+    border-color: #2563eb;
+    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.2);
+}
+
+.dark .cert-card-premium {
+    background: #1e293b;
+    border-color: #475569;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark .cert-card-premium:hover {
+    border-color: #60a5fa;
+    box-shadow: 0 20px 40px -10px rgba(96, 165, 250, 0.25);
+}
+
+/* --- Header Section --- */
+.cert-header-row {
+    padding: 15px 20px;
+    background: transparent;
+    border-bottom: 1px dashed #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dark .cert-header-row {
+    border-bottom-color: #334155;
+}
+
+/* Icon Box */
+.cert-icon-box {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.cert-card-premium:hover .cert-icon-box {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.cert-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Typography */
+.cert-role {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.dark .cert-role {
+    color: #f1f5f9;
+}
+
+/* --- List Styling --- */
+.cert-body {
+    padding: 5px 0;
+    flex-grow: 1;
+}
+
+.cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cert-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    border-bottom: 1px solid transparent;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+    color: #475569;
+}
+
+.dark .cert-list li {
+    color: #cbd5e1;
+}
+
+.cert-list li:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.dark .cert-list li:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.cert-list li:hover {
+    background-color: #eff6ff;
+    padding-left: 25px;
+    color: #1e293b;
+}
+
+.dark .cert-list li:hover {
+    background-color: rgba(37, 99, 235, 0.15);
+    color: #ffffff;
+}
+
+.cert-list-bullet {
+    width: 20px;
+    height: 20px;
+    background: #dbeafe;
+    color: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 10px;
+    transition: all 0.3s ease;
+}
+
+.cert-list li:hover .cert-list-bullet {
+    background: #2563eb;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.cert-name {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.cert-view-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.cert-view-icon:hover {
+    color: #2563eb;
+    background: #eff6ff;
+    transform: scale(1.1);
+}
+
+/* =========================================
+   RESPONSIVE LOGIC (MEDIA QUERIES)
+   ========================================= */
+
+/* TABLET / SMALL LAPTOP (2 Cards) */
+@media (max-width: 1024px) {
+    .cert-card-premium {
+        /* 100% - 1 gap / 2 cards */
+        min-width: calc((100% - 20px) / 2);
+        max-width: calc((100% - 20px) / 2);
+    }
+}
+
+/* MOBILE (1 Card) */
+@media (max-width: 768px) {
+    .cert-card-premium {
+        /* Full Width */
+        min-width: 100%;
+        max-width: 100%;
+        scroll-snap-align: center;
+    }
+}
+
+/* =========================================
+   SLIDER DOTS (CIRCLES)
+   ========================================= */
+.cert-dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cert-slider-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #cbd5e1;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cert-slider-dot.active {
+    background-color: #2563eb;
+    width: 25px;
+    border-radius: 10px;
+}
+
+.dark .cert-slider-dot {
+    background-color: #475569;
+}
+
+.dark .cert-slider-dot.active {
+    background-color: #60a5fa;
+}

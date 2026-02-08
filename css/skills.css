@@ -1,0 +1,242 @@
+/* =========================================
+   PREMIUM SKILLS UI - FINAL FIXED VERSION
+   ========================================= */
+
+/* 1. Base Card UI */
+.skill-card-premium {
+    background: #ffffff !important;
+    border: 2px solid #b8c2cc !important;
+    border-radius: 18px !important;
+    /* Mobile साठी थोडे Round कोपरे */
+    padding: 15px !important;
+    /* Services सारखे सेम Smooth Transition */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03) !important;
+    width: 100% !important;
+}
+
+/* Dark Mode */
+.dark .skill-card-premium {
+    background: #1e293b !important;
+    border-color: #475569 !important;
+}
+
+/* 2. HOVER EFFECT (Lift + Zoom + Glow) */
+.skill-card-premium:hover {
+    transform: translateY(-10px) scale(1.03) !important;
+    /* Zoom Effect */
+    border-color: #2563eb !important;
+    box-shadow: 0 20px 30px -5px rgba(37, 99, 235, 0.2) !important;
+    /* Blue Glow */
+    z-index: 10 !important;
+}
+
+.dark .skill-card-premium:hover {
+    border-color: #60a5fa !important;
+    box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 3. Header Styling */
+.s-header-premium {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark .s-header-premium {
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 4. MAIN ICON STYLING (Fixed Squashing) */
+.header-icon-box-v5 {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    /* CRITICAL: आयकॉन दाबला जाणार नाही */
+    background: #eff6ff !important;
+    /* Faint Blue (सुरुवातीला फिका) */
+    color: #2563eb !important;
+    /* Dark Blue Icon */
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.1rem !important;
+    flex-shrink: 0 !important;
+    /* CRITICAL: आयकॉनची साईज फिक्स राहील */
+    transition: 0.3s !important;
+}
+
+.dark .header-icon-box-v5 {
+    background: #0f172a !important;
+    color: #60a5fa !important;
+}
+
+/* Icon Animation on Hover/Tap */
+.skill-card-premium:hover .header-icon-box-v5 {
+    background: #2563eb !important;
+    /* डार्क निळा */
+    color: #ffffff !important;
+    /* पांढरा आयकॉन */
+    transform: rotate(-8deg) scale(1.1) !important;
+}
+
+/* Title Styling */
+.s-header-premium h3 {
+    font-size: 0.9rem !important;
+    font-weight: 800 !important;
+    color: #1e293b !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    word-break: break-word !important;
+    /* शब्द तुटणार नाही */
+}
+
+.dark .s-header-premium h3 {
+    color: #f1f5f9 !important;
+}
+
+/* 5. List Styling */
+.s-list-v5 {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-grow: 1 !important;
+}
+
+.s-list-v5 li {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 4px 0 !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    transition: 0.3s !important;
+    line-height: 1.3 !important;
+}
+
+.dark .s-list-v5 li {
+    color: #94a3b8 !important;
+}
+
+/* Hover Effect on List Items */
+.s-list-v5 li:hover {
+    color: #2563eb !important;
+    transform: translateX(5px) !important;
+}
+
+/* 6. SUB-SKILL ICON (Fixed Squashing) */
+.s-icon-v5 {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    /* CRITICAL: हा छोटा आयकॉन दाबला जाणार नाही */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(37, 99, 235, 0.12) !important;
+    border-radius: 6px !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0 !important;
+    /* CRITICAL FIX */
+}
+
+/* =========================================
+   RESPONSIVE GRID (Mobile Optimization)
+   ========================================= */
+
+/* Desktop: 5 Columns */
+@media (min-width: 1025px) {
+    .lg\:grid-cols-5 {
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+    }
+}
+
+/* Tablet: 3 Columns */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .md\:grid-cols-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}
+
+/* Mobile: 2 Columns PERFECT FIT */
+@media (max-width: 767px) {
+
+    /* Container Padding Reset */
+    .skills-grid-unique {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        width: 100% !important;
+    }
+
+    .grid-cols-2 {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        /* Gap कमी केला जेणेकरून बॉक्स रुंद दिसतील */
+        gap: 8px !important;
+    }
+
+    .skill-card-premium {
+        /* पॅडिंग ऍडजस्ट केली जेणेकरून कंटेंटला जागा मिळेल */
+        padding: 15px !important;
+        border-radius: 16px !important;
+    }
+
+    .s-header-premium {
+        gap: 8px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* मोबाईलवर आयकॉनची साईज परफेक्ट */
+    .header-icon-box-v5 {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .s-header-premium h3 {
+        font-size: 0.8rem !important;
+        /* टायटल साईज */
+    }
+
+    .s-list-v5 li {
+        font-size: 0.7rem !important;
+        /* लिस्ट फॉन्ट साईज */
+        gap: 6px !important;
+    }
+
+    .s-icon-v5 {
+        width: 20px !important;
+        height: 20px !important;
+        min-width: 20px !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* Global Fixes */
+html,
+body {
+    overflow-x: hidden !important;
+}
+
+[data-aos] {
+    pointer-events: none;
+}
+
+[data-aos].aos-animate {
+    pointer-events: auto;
+}

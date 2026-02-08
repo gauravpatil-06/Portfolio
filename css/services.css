@@ -1,0 +1,208 @@
+/* Premium Services UI */
+.service-card-v5 {
+    background: #ffffff !important;
+    border: 2px solid #b8c2cc !important;
+    border-radius: 24px !important;
+    padding: 25px !important;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    /* Content STARTS from top (Important Change) */
+    justify-content: flex-start !important;
+    position: relative !important;
+    user-select: none;
+}
+
+.dark .service-card-v5 {
+    background: #1e293b !important;
+    border-color: #475569 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hover Effect */
+.service-card-v5:hover {
+    transform: translateY(-12px) scale(1.03) !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15) !important;
+    z-index: 10 !important;
+}
+
+.dark .service-card-v5:hover {
+    border-color: #60a5fa !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Icon Box */
+.s-v5-icon {
+    width: 55px !important;
+    height: 55px !important;
+    background: #eff6ff !important;
+    color: #2563eb !important;
+    border-radius: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 20px !important;
+    transition: 0.3s !important;
+}
+
+.dark .s-v5-icon {
+    background: #0f172a !important;
+    color: #60a5fa !important;
+}
+
+.service-card-v5:hover .s-v5-icon {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    transform: scale(1.1) rotate(-8deg) !important;
+}
+
+/* Typography */
+.s-v5-title {
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+}
+
+.dark .s-v5-title {
+    color: #f1f5f9 !important;
+}
+
+.s-v5-desc {
+    font-size: 0.9rem !important;
+    color: #475569 !important;
+    margin-bottom: 15px !important;
+    text-align: left !important;
+    line-height: 1.6 !important;
+}
+
+.dark .s-v5-desc {
+    color: #94a3b8 !important;
+}
+
+/* List Styling - IMPORTANT FIX */
+.s-v5-features {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    /* 'margin-top: auto' removed. List starts immediately after text. */
+    margin-top: 5px !important;
+}
+
+.s-v5-features li {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin-bottom: 8px !important;
+}
+
+.dark .s-v5-features li {
+    color: #cbd5e1 !important;
+}
+
+/* =========================================================
+   GRID & SLIDER CONFIGURATION
+   ========================================================= */
+
+/* Desktop & Tablet Grid */
+@media (min-width: 768px) {
+    .services-grid-unique {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .services-grid-unique {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 32px !important;
+    }
+}
+
+/* MOBILE SLIDER LOGIC */
+@media (max-width: 767px) {
+    .services-grid-unique {
+        display: flex !important;
+        align-items: stretch !important;
+        /* EQUAL HEIGHT FIX */
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        scroll-behavior: smooth !important;
+        gap: 20px !important;
+
+        padding-top: 20px !important;
+        padding-bottom: 30px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .services-grid-unique::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-card-v5 {
+        min-width: 87vw !important;
+        width: 87vw !important;
+        scroll-snap-align: center !important;
+        height: auto !important;
+        padding: 20px !important;
+        border-radius: 20px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Dots Styling */
+    .slider-dots-container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin-top: -10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* Inactive Dot (Gray) */
+    .slider-dot {
+        width: 10px !important;
+        height: 10px !important;
+        border-radius: 50% !important;
+        background-color: #e2e8f0 !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    /* Active Dot (Blue) */
+    .slider-dot.active {
+        background-color: #2563eb !important;
+        width: 12px !important;
+        height: 12px !important;
+        transform: scale(1.1);
+    }
+
+    .dark .slider-dot {
+        background-color: #334155 !important;
+    }
+
+    .dark .slider-dot.active {
+        background-color: #60a5fa !important;
+    }
+}
+
+[data-aos] {
+    pointer-events: none;
+}
+
+[data-aos].aos-animate {
+    pointer-events: auto;
+}

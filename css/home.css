@@ -1,0 +1,479 @@
+/* ==========================================================================
+   1. BASE & TYPOGRAPHY
+   ========================================================================== */
+:root {
+    --h1-size: 3.5rem;
+    --p-size: 1.1rem;
+    --section-title-size: 2.5rem;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1 {
+    font-size: var(--h1-size) !important;
+    line-height: 1.2 !important;
+}
+
+p {
+    font-size: var(--p-size) !important;
+    line-height: 1.6 !important;
+}
+
+#typed {
+    font-size: 1.5rem !important;
+}
+
+.section-title {
+    font-size: var(--section-title-size) !important;
+    font-weight: 800;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   2. COMPONENTS (Nav, Buttons, Social)
+   ========================================================================== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: inherit;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    padding: 5px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2.5px;
+    background: #2563eb;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: .4s;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: #fff;
+}
+
+.btn-outline {
+    border: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+/* Social Container Base */
+#home .flex-nowrap.overflow-x-auto {
+    display: flex !important;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow: visible !important;
+    padding-bottom: 5px;
+}
+
+.social {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f8fafc;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.social:hover {
+    transform: translateY(-4px);
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.pro-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 30px;
+    transition: .4s;
+}
+
+/* ==========================================================================
+   3. IMAGES & DIVIDERS
+   ========================================================================== */
+.profile-ring {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #2563eb, #22d3ee, #f59e0b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem !important;
+    /* गॅप कमी केला */
+    text-align: center;
+}
+
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #22c55e;
+    border-radius: 50%;
+}
+
+.title-underline {
+    width: 60px;
+    height: 5px;
+    background: linear-gradient(to right, #2563eb, #93c5fd);
+    border-radius: 10px;
+}
+
+section,
+.education-wrapper,
+.achievements-wrapper,
+.skills-wrapper,
+.container,
+.mx-auto,
+.px-4,
+.px-6,
+.px-8 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+
+    /* HI LINE MAHATVACHI AHE (Padding Correction) */
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+/* Contact Card chi padding pan adjust keli */
+#contact-content .pro-card {
+    width: 100% !important;
+    margin: 0 auto 15px auto !important;
+    padding: 20px 15px !important;
+    /* 15px inside card */
+}
+
+.section-divider {
+    display: block !important;
+    height: 2px !important;
+    width: 300px !important;
+    background: rgba(15, 23, 42, 0.2) !important;
+    margin: 1.5rem auto !important;
+    /* रेषेच्या वर-खाली गॅप कमी केला पण रेषा तशीच ठेवली */
+    border: none !important;
+    opacity: 0.8 !important;
+}
+
+/* ==========================================================================
+   4. FOOTER & DARK MODE
+   ========================================================================== */
+.copyright-text {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+footer p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
+
+html.dark .section-divider {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+html.dark .section-tag {
+    color: #e5e7eb;
+}
+
+html.dark .section-title {
+    color: #94a3b8;
+}
+
+html.dark .pro-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+html.dark .profile-img {
+    border: 6px solid #0f172a;
+}
+
+html.dark .social {
+    background: #1e293b;
+    color: #cbd5e1;
+    border-color: #334155;
+}
+
+html.dark .copyright-text {
+    color: #cbd5e1;
+}
+
+html.dark .logo-dark-mode {
+    display: block;
+}
+
+html.dark .logo-light-mode {
+    display: none;
+}
+
+.logo-dark-mode {
+    display: none;
+}
+
+/* ==========================================================================
+   5. MOBILE & TABLET RESPONSIVENESS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    #home .flex-nowrap.overflow-x-auto {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        max-width: 100% !important;
+        margin: 15px auto 0 !important;
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+        box-sizing: border-box !important;
+        overflow: visible !important;
+    }
+
+    h1 {
+        text-align: center !important;
+        font-size: 2.3rem !important;
+        margin-top: -10px !important;
+    }
+
+    #typed {
+        text-align: center !important;
+        display: block;
+    }
+
+    #home p {
+        text-align: center !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .profile-ring {
+        max-width: 250px !important;
+        margin-bottom: 10px !important;
+    }
+
+    #home .flex-wrap {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --h1-size: 2.2rem;
+        --p-size: 0.88rem;
+        --section-title-size: 1.4rem;
+    }
+
+    body {
+        padding-top: 50px !important;
+        /* हेडर उंची कमी केली */
+    }
+
+    #typed {
+        font-size: 1.5rem !important;
+        line-height: 1.5 !important;
+    }
+
+    nav .h-24 {
+        height: 50px !important;
+        /* मोबाईलवर नवबार लहान केला */
+    }
+
+    .logo-img {
+        height: 25px !important;
+    }
+
+    section {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .profile-ring {
+        margin-bottom: 0 !important;
+    }
+
+    h1 {
+        margin-top: 4px !important;
+        margin-bottom: 6px !important;
+    }
+
+    #home .grid {
+        gap: 10px !important;
+    }
+
+    #home {
+        padding-top: 0.5rem !important;
+    }
+
+    .section-divider {
+        margin: 1rem auto !important;
+    }
+
+    /* एज्युकेशन मधील मजकूर मोबाईलवर डावीकडे घेतला */
+    #education p,
+    #education h3,
+    #education span,
+    .education-content p {
+        text-align: left !important;
+    }
+
+    .profile-ring {
+        max-width: 195px !important;
+    }
+
+    #contact-content .pro-card {
+        width: 96% !important;
+        margin: 0 auto 15px auto !important;
+        padding: 15px !important;
+    }
+
+    .social {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.75rem;
+    }
+
+    #contact-content h4,
+    #contact-content span,
+    #contact-content a,
+    #contact-content p {
+        font-size: 0.85rem !important;
+        word-break: break-all !important;
+    }
+}
+
+/* DESKTOP ENHANCEMENTS */
+@media (min-width: 1025px) {
+    #home .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    h1 {
+        text-align: left !important;
+        font-size: 3.5rem !important;
+        margin-top: 0 !important;
+    }
+
+    #home p {
+        text-align: left !important;
+        padding-left: 0 !important;
+    }
+
+    .profile-ring {
+        max-width: 460px !important;
+        border-radius: 4rem;
+    }
+
+    .profile-img {
+        border-radius: calc(4rem - 6px);
+    }
+}
+
+@media (max-width: 480px) {
+    #typed {
+        font-size: 1rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hidden.xl\:flex {
+        display: flex !important;
+    }
+
+    #mobile-menu-btn {
+        display: none !important;
+    }
+
+    nav .px-6 {
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+    }
+}
+
+.footer-link {
+    transition: .3s;
+}
+
+.footer-link:hover {
+    color: #3b82f6;
+    padding-left: 5px;
+}
