@@ -90,20 +90,3 @@ Portfolio/
 ✨ **Innovating through clean code and premium design.**
 
 </div>
-Update on 2026-01-20T12:00:00
-Update on 2026-01-21T12:00:00
-Update on 2026-01-22T12:00:00
-Update on 2026-01-23T12:00:00
-Update on 2026-01-24T12:00:00
-Update on 2026-01-25T12:00:00
-Update on 2026-01-26T12:00:00
-Update on 2026-01-27T12:00:00
-Update on 2026-01-28T12:00:00
-Update on 2026-01-29T12:00:00
-Update on 2026-01-30T12:00:00
-Update on 2026-02-10T12:00:00
-Update on 2026-02-12T12:00:00
-Update on 2026-02-13T12:00:00
-Update on 2026-02-14T12:00:00
-Update on 2026-02-17T12:00:00
-Update on 2026-02-18T12:00:00
